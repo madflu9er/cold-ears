@@ -1,13 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import BottomNavigation from '@/components/BottomNavigation.vue'
+import Header from '@/components/Header.vue'
+</script>
 
 <template>
   <main>
-    <div class="est">
-      <span class="text">{{ $t('home.since') }}</span>
-      <span class="text">2021</span>
+    <Header />
+    <div class="content">
+      <div class="est">
+        <span class="text_1">{{ $t('home.since') }}</span>
+        <span class="text_1">2021</span>
+      </div>
+      <img src="/img/logo.png" />
+      <span class="text_1 title">{{ $t('home.title') }}</span>
     </div>
-    <img src="/img/logo.png" />
-    <span class="text title">{{$t('home.title')}}</span>
+    <menu>
+      <BottomNavigation />
+    </menu>
   </main>
 </template>
 
@@ -33,16 +42,29 @@ main {
   padding-bottom: 5px;
   margin-bottom: 55px;
 }
-.text {
-  color: black;
-  font-size: 11px;
-  font-weight: 500;
-}
 
 .title {
   max-width: 175px;
   text-align: center;
   width: 100%;
-  margin-top: 20px
+  margin-top: 20px;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+menu {
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 500px;
+  width: 100%;
 }
 </style>
