@@ -21,16 +21,6 @@ import Header from '@/components/Header.vue'
 </template>
 
 <style scoped>
-main {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background: var(--vt-c-white);
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .est {
   display: flex;
   max-width: 200px;
@@ -48,14 +38,6 @@ main {
   text-align: center;
   width: 100%;
   margin-top: 20px;
-}
-
-.content {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 menu {

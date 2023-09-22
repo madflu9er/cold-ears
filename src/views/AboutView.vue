@@ -1,19 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from '@/components/Header.vue'
+</script>
 
 <template>
   <main>
+    <Header show-logo />
+    <div class="content">
     <span class="text_1">{{ $t('navigation.about') }}</span>
+    </div>
   </main>
 </template>
 
-<style scoped>
-main {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background: var(--vt-c-white);
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-</style>
+<style scoped></style>
