@@ -1,6 +1,14 @@
 <script setup lang="ts">
+import DrawerMenu from './DrawerMenu.vue'
 import { getLocale, setLocale } from '@/localization'
+import { useRouter } from 'vue-router'
 import { ref } from 'vue'
+
+const router = useRouter()
+
+const { showLogo } = defineProps({
+  showLogo: Boolean
+})
 
 const locales = ['ua', 'en']
 const currentLocale = ref(getLocale())
@@ -10,13 +18,17 @@ const handleChangeLanguage = (l: string) => {
   currentLocale.value = l
 }
 
-console.log({ lang: currentLocale.value })
+const goHome = () => router.push('/');
 </script>
 
 <template>
   <header>
-    <div class="menu"></div>
-    <div class="logo"></div>
+    <div class="menu">
+      <DrawerMenu />
+    </div>
+    <div class="logo">
+      <img @click="goHome" v-if="showLogo" class="header_logo" src="/img/logo.png" />
+    </div>
     <div class="languages">
       <div
         class="text_1 language"
@@ -27,11 +39,24 @@ console.log({ lang: currentLocale.value })
       >
         {{ locale }}
       </div>
+      <div class="action_items">
+        <vue-feather type="search" class="icon"></vue-feather>
+        <vue-feather type="user" class="icon"></vue-feather>
+        <vue-feather type="shopping-bag" class="icon"></vue-feather>
+      </div>
     </div>
   </header>
 </template>
 
 <style scoped>
+.header_logo {
+  width: 80px;
+  cursor: pointer;
+}
+.icon {
+  color: #222;
+}
+
 header {
   width: 100%;
   padding: 28px 0;
@@ -44,10 +69,22 @@ header {
 .languages {
   display: flex;
   flex-direction: row;
+  flex: 0.25;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.action_items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  margin-left: 20px;
 }
 
 .logo {
-  flex: 1;
+  flex: 0.5;
+  text-align: center;
 }
 
 .language {
@@ -56,7 +93,19 @@ header {
   cursor: pointer;
 }
 
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex: 0.25;
+}
+
 .activeLanguage {
   text-decoration: underline;
+}
+
+@media (max-width: 1280px) {
+  header {
+    padding: 28px;
+  }
 }
 </style>

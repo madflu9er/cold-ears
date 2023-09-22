@@ -1,5 +1,11 @@
 export const messages = {
   en: {
+    header: {
+      menu: {
+        dresses: 'dresses',
+        shawls: 'shawls'
+      },
+    },
     navigation: {
       shipping: 'shipping',
       returning: 'returning',
@@ -12,6 +18,12 @@ export const messages = {
     }
   },
   ua: {
+    header: {
+      menu: {
+        dresses: 'сукні',
+        shawls: 'хустки'
+      },
+    },
     navigation: {
       shipping: 'доставка',
       returning: 'повернення',
