@@ -55,6 +55,7 @@ const goHome = () => router.push('/');
 }
 .icon {
   color: #222;
+  cursor: pointer;
 }
 
 header {

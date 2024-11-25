@@ -22,13 +22,12 @@ const handleNavigate = (route: string) => {
 
 watch(route, (newValue, _) => {
   currentRoute.value = newValue.params.name
-});
-
+})
 </script>
 
 <template>
   <div class="menu_wrapper">
-    <vue-feather @click="handleMenuVisible" type="menu" class="icon"></vue-feather>
+    <vue-feather @click="handleMenuVisible" type="menu" class="icon" />
     <div v-if="isMenuVisible" class="menu">
       <span
         v-for="route in menuItems"
@@ -43,6 +42,10 @@ watch(route, (newValue, _) => {
 </template>
 
 <style scoped>
+.icon {
+  color: #222;
+  cursor: pointer;
+}
 .menu_wrapper {
   position: relative;
 }

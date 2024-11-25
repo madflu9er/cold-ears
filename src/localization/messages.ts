@@ -4,7 +4,7 @@ export const messages = {
       menu: {
         dresses: 'dresses',
         shawls: 'shawls'
-      },
+      }
     },
     navigation: {
       shipping: 'shipping',
@@ -15,6 +15,10 @@ export const messages = {
     home: {
       since: 'since',
       title: 'mama said, that the ears should be warm'
+    },
+    product: {
+      description: 'description',
+      season: 'season'
     }
   },
   ua: {
@@ -22,7 +26,7 @@ export const messages = {
       menu: {
         dresses: 'сукні',
         shawls: 'хустки'
-      },
+      }
     },
     navigation: {
       shipping: 'доставка',
@@ -33,6 +37,10 @@ export const messages = {
     home: {
       since: 'since',
       title: 'мама казала, що вушка повинні бути в теплі'
+    },
+    product: {
+      description: 'опис',
+      season: 'пори року'
     }
   }
 }
